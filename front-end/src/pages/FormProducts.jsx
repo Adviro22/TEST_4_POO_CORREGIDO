@@ -7,7 +7,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
-export default function FormStudents() {
+export default function FormProducts() {
   const { createProduct, getProduct, updateProduct } = useProducts();
   const navigate = useNavigate();
   const params = useParams();
@@ -37,7 +37,7 @@ export default function FormStudents() {
         });
       }
 
-      navigate("/students");
+      navigate("/products");
     } catch (error) {
       console.log(error);
       // window.location.href = "/";

@@ -3,7 +3,7 @@ import { useProducts } from "../context/ProductContext";
 import { ProductCard } from "../components/products/ProductCard";
 import { ImFileEmpty } from "react-icons/im";
 
-export default function GetStudents() {
+export default function GetProducts() {
   const { products, getProducts } = useProducts();
 
   useEffect(() => {

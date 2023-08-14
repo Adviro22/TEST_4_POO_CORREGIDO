@@ -14,7 +14,7 @@ export default function Login() {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    if (isAuthenticated) navigate("/Students");
+    if (isAuthenticated) navigate("/products");
   },[isAuthenticated])
 
   const submitLogin = handleSubmit( (body) => {

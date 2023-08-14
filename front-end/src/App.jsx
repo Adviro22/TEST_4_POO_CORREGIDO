@@ -1,13 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import GetStudents from "./pages/GetStudents";
+import GetProducts from "./pages/GetProducts.jsx";
 import Login from "./pages/Login";
 import { Navbar } from "./components/Navbar";
-// import Register1 from "./pages/Register1.jsx"
 import { Authprovider } from "./context/AuthContext.jsx";
 import Register from "./pages/Register.jsx";
-import FormStudents from "./pages/FormStudents.jsx";
-import UserProfile from "./pages/UserProfile.jsx";
+import FormProducts from "./pages/FormProducts.jsx";
 import ProtectedRoute from "./ProtectedRoute.jsx";
 import { ProductProvider } from "./context/ProductContext.jsx";
 
@@ -23,9 +21,9 @@ function App() {
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route element={<ProtectedRoute />}>
-                <Route path="/students" element={<GetStudents />} />
-                <Route path="/add-student" element={<FormStudents />} />
-                <Route path="/student/:id" element={<FormStudents />} />
+                <Route path="/products" element={<GetProducts />} />
+                <Route path="/add-product" element={<FormProducts />} />
+                <Route path="/product/:id" element={<FormProducts />} />
               </Route>
             </Routes>
           </main>

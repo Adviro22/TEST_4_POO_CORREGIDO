@@ -18,7 +18,7 @@ export default function Register() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isAuthenticated) navigate("/students");
+    if (isAuthenticated) navigate("/products");
   }, [isAuthenticated]);
 
   const submitRegister = handleSubmit((body) => {
