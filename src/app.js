@@ -9,7 +9,7 @@ const app = express();
 // para establecer el dominio del backend y las cokkies
 //app.use(cors());//permite conectarse con diferentes servidores
 app.use(cors({
-    origin: 'http://localhost:5174',
+    origin: 'http://localhost:5173',
     credentials:true
 }));//permite conectarse con diferentes servidores
 app.use(express.json());

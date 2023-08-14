@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Button, Card, Input, Label } from "../components/ui";
-import { useStudents } from "../context/StudentContext";
+import { useProducts } from "../context/ProductContext";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 dayjs.extend(utc);
 
 export default function FormStudents() {
-  const { createStudent, getStudent, updateStudent } = useStudents();
+  const { createProduct, getProduct, updateProduct } = useProducts();
   const navigate = useNavigate();
   const params = useParams();
   const {
@@ -21,7 +21,7 @@ export default function FormStudents() {
   const onSubmit = async (data) => {
     try {
       if (params.id) {
-        updateStudent(params.id, {
+        updateProduct(params.id, {
           ...data,
           precio:parseFloat(data.precio),
           stock:parseFloat(data.stock),
@@ -29,7 +29,7 @@ export default function FormStudents() {
         });
       } else {
         console.log("al grabar:",data)
-        createStudent({
+        createProduct({
           ...data,
           precio:parseFloat(data.precio),
           stock:parseFloat(data.stock),
@@ -46,16 +46,16 @@ export default function FormStudents() {
 
   useEffect(() => {
     console.log(params.id)
-    const loadStudent = async () => {
+    const loadProdct = async () => {
       if (params.id) {
-        const student = await getStudent(params.id);
+        const student = await getProduct(params.id);
         setValue("nombre", student.nombre);
         setValue("precio", student.precio);
         setValue("stock", student.stock);
         
       }
     };
-    loadStudent();
+    loadProdct();
   }, []);
 
   return (
