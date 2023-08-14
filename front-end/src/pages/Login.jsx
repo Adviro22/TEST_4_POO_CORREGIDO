@@ -31,14 +31,14 @@ export default function Login() {
         </ul>
         <h2 className="text-2xl font-bold text-violet-800 uppercase text-center">Login de Autentificacion</h2>
         <form onSubmit={submitLogin} className="bg-violet-300">
-          <label htmlFor="email:" className="text-md block my-1 text-black">Email:</label>
+          <label htmlFor="username:" className="text-md block my-1 text-black">Username:</label>
           <input className="w-full bg-white px-4 py-2 rounded-md text-black"
-            type="email"
-            name="email"
-            placeholder="Escriba su mail..."
-            {...register("email", { required: {value:true,message:"Mail es requerido"} })}
+            type="text"
+            name="username"
+            placeholder="Escriba su username..."
+            {...register("username", { required: {value:true,message:"Username es requerido"} })}
           />
-          {errors.email && (<p className="text-red-500 font-semibold">{errors.email.message}</p>)}
+          {errors.username && (<p className="text-red-500 font-semibold">{errors.username.message}</p>)}
           <label htmlFor="password" className="text-md block my-1 text-black">Password:</label>
           <input className="w-full bg-white px-4 py-2 rounded-md text-black"
             type="password"
@@ -49,7 +49,7 @@ export default function Login() {
            {errors.password && (<p className="text-red-500 font-semibold">{errors.password.message}</p>)}
          
           <button type="submit" 
-                  className="bg-indigo-500 px-4 py-1 rounded-md my-2">Registrarse
+                  className="bg-indigo-500 px-4 py-1 rounded-md my-2">Iniciar Sesion
           </button>
         </form>
 
