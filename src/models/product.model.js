@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const studentSchema = new mongoose.Schema(
+const productSchema = new mongoose.Schema(
    {
      nombre: { type: String, required: true, unique: true },
      precio: { type: Number, required: true },
@@ -14,4 +14,4 @@ const studentSchema = new mongoose.Schema(
     
 );
 
-export default mongoose.model("estudiante", studentSchema);
+export default mongoose.model("producto", productSchema);

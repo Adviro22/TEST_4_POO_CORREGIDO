@@ -1,6 +1,6 @@
 import { z } from "zod";
  
-export const createStudentSchema = z.object({
+export const createProductSchema = z.object({
   nombre: z.string({required_error: "Nombre is required",}),
   precio: z.number({required_error: "Precio es requerido",})
     .min(1,{message:"La nota debe ser como minimo 1",}),
