@@ -23,16 +23,16 @@ export default function FormStudents() {
       if (params.id) {
         updateStudent(params.id, {
           ...data,
-          nota1:parseFloat(data.nota1),
-          nota2:parseFloat(data.nota2),
+          precio:parseFloat(data.precio),
+          stock:parseFloat(data.stock),
           date: dayjs.utc(data.date).format(),
         });
       } else {
         console.log("al grabar:",data)
         createStudent({
           ...data,
-          nota1:parseFloat(data.nota1),
-          nota2:parseFloat(data.nota2),
+          precio:parseFloat(data.precio),
+          stock:parseFloat(data.stock),
           date: dayjs.utc(data.date).format(),
         });
       }
@@ -50,8 +50,8 @@ export default function FormStudents() {
       if (params.id) {
         const student = await getStudent(params.id);
         setValue("nombre", student.nombre);
-        setValue("nota1", student.nota1);
-        setValue("nota2", student.nota2);
+        setValue("precio", student.precio);
+        setValue("stock", student.stock);
         
       }
     };
@@ -66,29 +66,29 @@ export default function FormStudents() {
         <Input
           type="text"
           name="nombre"
-          placeholder="Ingrese nombre"
+          placeholder="Ingrese el Nombre del producto"
           {...register("nombre",{ required: {value:true,message:"Nombre es requerido"} })}
           autoFocus
         />
         {errors.nombre && (
           <p className="text-red-500 font-semibold">{errors.nombre.message}</p>
         )}
-        <Label htmlFor="nota1">nota1:</Label>
+        <Label htmlFor="precio">Precio:</Label>
          <Input 
             type="number"
-            name="nota1"
-            placeholder="Escriba la nota1..."
-            {...register("nota1", { required: {value:true,message:"Nota1 es requerido"} })}
+            name="precio"
+            placeholder="Escriba el precio..."
+            {...register("precio", { required: {value:true,message:"Precio es requerido"} })}
           />
-          {errors.nota1 && (<p className="text-red-500 font-semibold">{errors.nota1.message}</p>)}
-         <Label htmlFor="nota2">nota2:</Label>
+          {errors.precio && (<p className="text-red-500 font-semibold">{errors.precio.message}</p>)}
+         <Label htmlFor="stock">Stock:</Label>
           <Input 
             type="number"
-            name="nota2"
-            placeholder="Escriba la nota2..."
-            {...register("nota2", { required: {value:true,message:"Nota2 es requerido"} })}
+            name="stock"
+            placeholder="Escriba la stock..."
+            {...register("stock", { required: {value:true,message:"Stock es requerido"} })}
           />
-          {errors.nota2 && (<p className="text-red-500 font-semibold">{errors.nota2.message}</p>)}
+          {errors.stock && (<p className="text-red-500 font-semibold">{errors.stock.message}</p>)}
           
         <Button>Grabar Registro</Button>
       </form>

@@ -9,7 +9,7 @@ export function Navbar() {
   return (
     <nav className="bg-orange-400 my-3 flex justify-between py-5 px-10 rounded-lg ">
       <h1 className="text-2xl font-bold">
-        <Link to={isAuthenticated ? "/students" : "/"}>Estudiantes</Link>
+        <Link to={isAuthenticated ? "/students" : "/"}>Productos</Link>
       </h1>
       <ul className="flex gap-x-2">
         {isAuthenticated ? (
@@ -18,7 +18,7 @@ export function Navbar() {
               user: {user.email}
             </li>
             <li>
-              <ButtonLink to="/add-student">Ingresar Estudiante</ButtonLink>
+              <ButtonLink to="/add-student">Ingresar Productos</ButtonLink>
             </li>
             <li>
               <Link to="/" onClick={() => logout()}>

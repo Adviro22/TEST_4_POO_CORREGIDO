@@ -13,8 +13,8 @@ export function StudentCard({ student }) {
           <ButtonLink to={`/student/${student._id}`}>Edit</ButtonLink>
         </div>
       </header>
-      <p className="text-slate-300"><span className="text-blue-400 font-bold">Nota1:</span> {student.nota1}</p>
-      <p className="text-slate-300"><span className="text-blue-400 font-bold">Nota2:</span>{student.nota2}</p>
+      <p className="text-slate-300"><span className="text-blue-400 font-bold">Precio:</span> {student.precio}</p>
+      <p className="text-slate-300"><span className="text-blue-400 font-bold">Stock:</span>{student.stock}</p>
      
     </Card>
   );
